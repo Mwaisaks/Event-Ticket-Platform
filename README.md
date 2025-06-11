@@ -5,6 +5,8 @@ I still think it would be wise to make the start, endDate not nullable.
 
 * Implementing a soft delete features so that when the user deletes their account, it doesn't delete the events.
 * Same for Ticket and ticketType r/ship
+
+Implement CSRF
 ***
 
 First of all I'm amazed with how the project was broken down; the project brief from page 6 to 25 in the buikd-event-ticket platform.pdf. What kind of high-levele thinking do I need as developer to have a very good plan where you put yourself in the shoes of the user and identify the POV of the user, I just wanna employ such a mindset when doing my personal projects. Any tips?
@@ -125,5 +127,23 @@ So cascades are only defined in the OneToMany r/ships only?
 
 we won't use any referenced fields in our equals and hashcode methods..for now
 
+
+***
+## JWT to User
+
+Extending the JpaRepository, gives you the save and create CRUD operations
+
+We'll remove @Builder. 
+
+* It requires us to add additional annotations where we've initialised using collections, atm it's ignoring it and assigning null to the variables
+* We've used Jpa annotations for audits; @CreatedDate and @LastModifiedDate
+
+**Enabling Spring JPA Audit**
+* Created the JpaConfiguration class in the config package, use @Configuration and @EnableJpaAuditing
+* Added orm.xml configuration file enabling the audit fields.
+
+
+***
+## Create Event
 
 
