@@ -1,4 +1,4 @@
-package com.devtiro.EventTicketPlatform.domain.request;
+package com.devtiro.EventTicketPlatform.domain.response;
 
 import com.devtiro.EventTicketPlatform.domain.enums.EventStatusEnum;
 import lombok.AllArgsConstructor;
@@ -6,21 +6,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateEventRequest {
+public class CreateEventResponseDto {
 
+    private UUID id;
     private String name;
     private LocalDateTime start;
     private LocalDateTime end;
-    private String venue;
+    private String venue; //Could be its own entity
     private LocalDateTime salesStart;
     private LocalDateTime salesEnd;
     private EventStatusEnum status;
-    private List<CreateTicketTypeRequest> ticketTypes = new ArrayList<>();
+    private List<CreateTicketTypeResponseDto> ticketTypes;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
-} //To be used in the service layer
+}

@@ -7,6 +7,8 @@ I still think it would be wise to make the start, endDate not nullable.
 * Same for Ticket and ticketType r/ship
 
 Implement CSRF
+
+**Tip:** implement the feature where the end date is after the start date in the CreateEventRequestDto.java
 ***
 
 First of all I'm amazed with how the project was broken down; the project brief from page 6 to 25 in the buikd-event-ticket platform.pdf. What kind of high-levele thinking do I need as developer to have a very good plan where you put yourself in the shoes of the user and identify the POV of the user, I just wanna employ such a mindset when doing my personal projects. Any tips?
@@ -146,7 +148,9 @@ We'll remove @Builder.
 ***
 ## Create Event
 
+The CreateEventRequest and CreateEventRequestDto.java - one is used in the service layer the one ending with dto is supposed to be used fro the presantation layer
 
+**Tip:** implement the feature where the end date is after the start date in the CreateEventRequestDto.java
 ***
 
 
