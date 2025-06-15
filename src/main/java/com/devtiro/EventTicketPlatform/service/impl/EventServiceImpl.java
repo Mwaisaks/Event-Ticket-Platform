@@ -3,7 +3,7 @@ package com.devtiro.EventTicketPlatform.service.impl;
 import com.devtiro.EventTicketPlatform.domain.entity.Event;
 import com.devtiro.EventTicketPlatform.domain.entity.TicketType;
 import com.devtiro.EventTicketPlatform.domain.entity.User;
-import com.devtiro.EventTicketPlatform.domain.request.CreateEventRequest;
+import com.devtiro.EventTicketPlatform.domain.dtos.request.CreateEventRequest;
 import com.devtiro.EventTicketPlatform.repository.EventRepository;
 import com.devtiro.EventTicketPlatform.repository.UserRepository;
 import com.devtiro.EventTicketPlatform.service.EventService;
@@ -29,6 +29,8 @@ public class EventServiceImpl implements EventService {
                         String.format("User with ID '%S' not found", organiserId)
                 ));
 
+        Event createdEvent = new Event();
+
         List<TicketType> createdTicketTypes = event.getTicketTypes().stream().map(
                 ticketType -> {
                     TicketType createdTicketType = new TicketType();
@@ -36,11 +38,11 @@ public class EventServiceImpl implements EventService {
                     createdTicketType.setPrice(ticketType.getPrice());
                     createdTicketType.setDescription(ticketType.getDescription());
                     createdTicketType.setTotalAvailable(ticketType.getTotalAvailable());
+                    createdTicketType.setEvent(createdEvent);
                     return createdTicketType;
                 }
         ).toList();
 
-        Event createdEvent = new Event();
 
         createdEvent.setName(event.getName());
         createdEvent.setStart(event.getStart());

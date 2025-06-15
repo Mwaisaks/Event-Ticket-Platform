@@ -19,7 +19,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Event {
+public class  Event {
 
     @Id
     @Column(name = "id", updatable = false, nullable = false)
@@ -29,10 +29,10 @@ public class Event {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "start")
+    @Column(name = "event_start")
     private LocalDateTime start;
 
-    @Column(name = "end")
+    @Column(name = "event_end")
     private LocalDateTime end;
 
     @Column(name = "venue", nullable = false)

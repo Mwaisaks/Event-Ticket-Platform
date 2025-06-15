@@ -33,7 +33,7 @@ public class QrCode {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ticket_id")
-    private String ticket;
+    private Ticket ticket;
 
     @CreatedDate //automatically populates the field
     @Column(name = "created_at", updatable = false, nullable = false)

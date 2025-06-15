@@ -20,7 +20,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class UserProvisioningFilter extends OncePerRequestFilter {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,

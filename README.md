@@ -9,6 +9,7 @@ I still think it would be wise to make the start, endDate not nullable.
 Implement CSRF
 
 **Tip:** implement the feature where the end date is after the start date in the CreateEventRequestDto.java
+//future implementation for the organiser to specify other users who can call this method (UserController.java)
 ***
 
 First of all I'm amazed with how the project was broken down; the project brief from page 6 to 25 in the buikd-event-ticket platform.pdf. What kind of high-levele thinking do I need as developer to have a very good plan where you put yourself in the shoes of the user and identify the POV of the user, I just wanna employ such a mindset when doing my personal projects. Any tips?
@@ -146,11 +147,39 @@ We'll remove @Builder.
 
 
 ***
-## Create Event
+## Create Event Part IV
 
 The CreateEventRequest and CreateEventRequestDto.java - one is used in the service layer the one ending with dto is supposed to be used fro the presantation layer
 
 **Tip:** implement the feature where the end date is after the start date in the CreateEventRequestDto.java
+
+//future implementation for the organiser to se caller is the organiserpecify other users who can call this method
 ***
+#### MapStruct Guide
+A Java Bean mapper - maps between 2 java beans automatically
+
+Manual mapping can be time-consuming and has a lot of boiler-plate code.
+
+With Mapstruct, we only need to create the interface nad the library will automatically create a concrete implementation during compile time.
+
+Visit https://www.javaguides.net/2022/12/spring-boot-mapstruct-example-tutorial.html for more.
+
+#### ModelMapper Guide
+- a lightweight java library used for model mappings
+
+**Steps**
+* Add the maven dependency
+* configure Model Mapper a s a Spring Bean - in the main class
+* Inject and use ModelMapper Spring Bean in the service class
+
+https://www.javaguides.net/2022/12/spring-boot-modelmapper-example-map.html
+
+#### Exception handling
+Created a GlobalExceptionHandler.java class in the controller package.
+
+Create a dto for the response expected by the user, has String and sometimes type fields. Make use of lombok
+
+
+
 
 

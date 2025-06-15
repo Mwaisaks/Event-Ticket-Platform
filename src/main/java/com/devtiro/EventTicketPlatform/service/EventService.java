@@ -1,7 +1,7 @@
 package com.devtiro.EventTicketPlatform.service;
 
 import com.devtiro.EventTicketPlatform.domain.entity.Event;
-import com.devtiro.EventTicketPlatform.domain.request.CreateEventRequest;
+import com.devtiro.EventTicketPlatform.domain.dtos.request.CreateEventRequest;
 
 import java.util.UUID;
 
