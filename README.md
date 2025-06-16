@@ -21,6 +21,10 @@ In the REST API design(pg. 60), tell me the difference between the PUT and PATCH
 Having a verb in the url path is not considered best practice, instead we're supposed to use a query parameter, Why's that?
 
 the other one is  a documentation for the project which you'll as a reference throughout this chat. 
+***
+#### REST API Design
+Using Sub-resources for resources that exists within another resource. i.e
+ Examples will be included 
 
 ***
 **application.properties file**
