@@ -43,7 +43,6 @@ public class EventServiceImpl implements EventService {
                 }
         ).toList();
 
-
         createdEvent.setName(event.getName());
         createdEvent.setStart(event.getStart());
         createdEvent.setEnd(event.getEnd());

@@ -183,7 +183,10 @@ Created a GlobalExceptionHandler.java class in the controller package.
 
 Create a dto for the response expected by the user, has String and sometimes type fields. Make use of lombok
 
-
+***
+### List Event
+Pagination
+Spring Data JPA
 
 
 
